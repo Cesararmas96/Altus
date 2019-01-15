@@ -1,0 +1,43 @@
+$vars: (
+	primary: #434343,
+	secondary: #DEDEDE,
+	accent: #D4671F,
+);
+
+$primary: map-get($vars,primary);
+$secondary: map-get($vars, secondary);
+$accent: map-get($vars, accent);
+
+
+:root {
+	@each $key, $value in $vars {
+		#{$key}: $value;
+	}
+}
+
+$breakpoints : (
+	small: 0,
+	medium: 640px,
+	large: 1024px,
+	xlarge: 1440px,
+);
+
+$fonts: (
+	title1: 3.125em  3.75em,
+	title2: 2em 2.5em,
+	title3: 1.5625em 1.875em,
+	base: 1.25em 1.875em,
+	small: 1em 1.25em,
+	smaller: 0.875em 1.25em,
+);
+
+// Font Weigth
+
+$normal: 400;
+$semibold: 600;
+
+
+
+
+
+

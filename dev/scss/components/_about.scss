@@ -1,0 +1,53 @@
+.about-container{
+	background: url('../img/02.jpg') center/cover no-repeat;
+	clip-path: polygon(0 8%, 100% 0, 100%  92%, 0 100%);
+	padding: 3em 0;
+	position: relative;
+
+	&:before{
+		content: '';
+		width: 100%;
+		height: 100%;
+		top:0;
+		left: 0;
+		position: absolute;
+		background: $primary;
+		opacity: .5;
+	}
+
+}
+
+.about{
+	position: relative;
+	width: 80%;
+	margin-left: 10%;
+
+	@include from(large){
+		display: flex;
+	}
+
+	&__img{
+		display: none;
+
+		@include from(large){
+			display: block;
+			width: 700px;
+		}
+	}
+
+	&__description{
+		background: rgba($accent, .9);
+		color: #FFF;
+		padding: 1em;
+		@include font(small);
+		font-style: italic;
+
+		@include from(large){
+			width: 60%;
+      		align-self: center;
+      		@include font(base);
+      		margin-left: -2em;
+      		padding: 2em;
+		}		
+	}
+}

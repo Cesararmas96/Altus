@@ -1,0 +1,87 @@
+$fonts: (
+	title1: 3.125em  3.75em,
+	title2: 2em 2.5em,
+	title3: 1.5625em 1.875em,
+	base: 1.25em 1.875em,
+	small: 1em 1.25em,
+	smaller: 0.875em 1.25em,
+);
+
+// Font Weigth
+
+$normal: 400;
+$semibold: 600;
+
+
+@mixin font($size) {
+	font-size: nth(map-get($fonts, $size),1);
+	line-height: nth(map-get($fonts,$size), 2);
+}
+
+body{
+	font-family: serif;
+	@include font(base);
+ }
+
+h1,
+.title1 {
+	@include font(title2);
+
+	@include from(large){
+		@include font(title1);
+	}
+}
+
+
+h2,
+.title2 {
+	@include font(title3);
+
+	@include from(large){
+		@include font(title2)
+	}
+}
+
+h3,
+.title3 {
+	@include font(base);
+
+	@include from(large){
+		@include font(title3);
+	}
+}
+
+small,
+.small{
+	@include font(small);
+
+}
+
+.smaller{
+	@include font(smaller);
+}
+
+h1, h2, h3, h4, h5 , h6{
+	font-weight: $semibold;
+}
+
+h1{
+	margin-top: 0;
+	margin-bottom: 1em;
+}
+
+.title2,
+.title3{
+	margin-top: 1.5em;
+	margin-bottom: 1em;
+}
+
+.small,
+.smaller{
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+a{
+	@include var(color,--accent);
+}
